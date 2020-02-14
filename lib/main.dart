@@ -1,6 +1,56 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(SampleApp());
+// class SampleApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Text(
+//         'Hello, world!',
+//         textDirection: TextDirection.ltr,
+//         style: TextStyle(color: Colors.black),
+//         )
+//       );
+//   }
+// }
+
+// void main() {
+//   runApp(
+//     Center(
+//       child: Text(
+//         'Hello, world!',
+//         textDirection: TextDirection.ltr,
+//         style: TextStyle(color: Colors.black),
+//       ),
+//     ),
+//   );
+// }
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.network(
+                "http://bit.ly/39f0IkW",
+                width: 250,
+                height: 50,
+              ),
+              Text("明日から使えるカンタン施工管理アプリ"),
+              Text("by Flutter"),
+            ]
+          )
+        )
+      )
+    )
+  ));
+}
+
+// void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -97,6 +147,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            FlatButton(
+              child: Text('Tap'),
+              onPressed: () {
+                print("This is a print()");
+              },
             ),
           ],
         ),
