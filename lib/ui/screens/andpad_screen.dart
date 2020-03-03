@@ -26,6 +26,12 @@ class AndpadScreen extends StatelessWidget {
                   }
                 ),
                 IncrementButton(),
+                Consumer<CounterModel>(
+                  builder: (context, model, child) {
+                    return Text("${model.message}");
+                  }
+                ),
+                FetchButton(),
                 FlatButton(
                   child: const Text('NavigationPush'),
                   onPressed: () {
@@ -49,6 +55,19 @@ class IncrementButton extends StatelessWidget {
       child: const Text('Increment'),
       onPressed: () {
         counterModel.increment();
+      },
+    );
+  }
+}
+
+class FetchButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final counterModel = Provider.of<CounterModel>(context);
+    return FlatButton(
+      child: const Text('Fetch'),
+      onPressed: () {
+        counterModel.fetch();
       },
     );
   }
